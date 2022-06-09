@@ -1,0 +1,22 @@
+[{
+    "nama": "Bagus Setiadi",
+    "nid": "1234212",
+    "email": "Bagussetiadi@unpam.ac.id",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 1
+},
+{
+    "nama": "Agung Waluyo",
+    "nim": "12314512",
+    "email": "agungwaluyo@unpam.ac.id",
+    "jurusan": "Akutansi",
+    "idDosenWali": 2
+},
+{
+    "nama": "Weni Gurita",
+    "nim": "1412413451",
+    "email": "wenigurita@unpam.ac.id",
+    "jurusan": "Ilmu Qur'an",
+    "idDosenWali": 3
+}
+]

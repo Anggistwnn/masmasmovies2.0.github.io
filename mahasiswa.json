@@ -1,0 +1,23 @@
+ [{
+            "nama": "Anggi Setiawan",
+            "nim": "181011400567",
+            "email": "anggistwnn@unpam.ac.id",
+            "jurusan": "Teknik Informatika",
+            "idDosenWali": 1
+        },
+        {
+            "nama": "Ade Waliya",
+            "nim": "181011403433",
+            "email": "adewaliya@unpam.ac.id",
+            "jurusan": "Akutansi",
+            "idDosenWali": 2
+        },
+        {
+            "nama": "Raihany Naimiyah",
+            "nim": "181011401234",
+            "email": "raihani@unpam.ac.id",
+            "jurusan": "Ilmu Qur'an",
+            "idDosenWali": 3
+        }
+    ]
+    
