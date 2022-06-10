@@ -1,33 +1,39 @@
-$.ajax({
-    url: 'http://www.omdbapi.com/?apikey=21cf67eb&s=harry potter',
-    success: result => {
-        const movies = result.Search;
-        console.log(movies);
-        let cards = '';
-        movies.forEach(m => {
-            cards += showCards(m);
-        });
-        $('.movies-container').html(cards);
+$('.search-button').on('click', function () {
 
-        // ketika tombol detail diklik
-        $('.modal-detail-button').on('click', function () {
-            $.ajax({
-                url: 'http://www.omdbapi.com/?apikey=21cf67eb&i=' + $(this).data('imdbid'),
-                success: m => {
-                    const movieDetail = showMovieDetail(m);
-                    $('.modal-body').html(movieDetail);
-                },
-                error: (e) => {
-                    console.log(e.responseText);
-                }
+    $.ajax({
+        url: 'http://www.omdbapi.com/?apikey=21cf67eb&s=' + $('.input-keyword').val(),
+        success: result => {
+            const movies = result.Search;
+            console.log(movies);
+            let cards = '';
+            movies.forEach(m => {
+                cards += showCards(m);
             });
-        });
+            $('.movies-container').html(cards);
 
-    },
-    error: (e) => {
-        console.log(e.responseText);
-    }
+            // ketika tombol detail diklik
+            $('.modal-detail-button').on('click', function () {
+                $.ajax({
+                    url: 'http://www.omdbapi.com/?apikey=21cf67eb&i=' + $(this).data('imdbid'),
+                    success: m => {
+                        const movieDetail = showMovieDetail(m);
+                        $('.modal-body').html(movieDetail);
+                    },
+                    error: (e) => {
+                        console.log(e.responseText);
+                    }
+                });
+            });
+
+        },
+        error: (e) => {
+            console.log(e.responseText);
+        }
+    });
+
 });
+
+
 
 function showCards(m) {
     return `<div class="col-md-4 my-5">
