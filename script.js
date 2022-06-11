@@ -95,3 +95,23 @@
 
 // Promies
 // Obj yang merepresentasikan keberhasilan atau kegagalan sebuah event yang asynchronous dimasa yang akan datang
+// janji (terpenuhi/ingkar)
+// state (fulfilled/rejected/pending)
+// callback (resolve/reject/finally)
+// aksi (then/catch)
+
+// Contoh 1
+// let ditepati = true;
+// const janji1 = new Promise((resolve, reject) => {
+//     if (ditepati) {
+//         resolve('Janji Telah Ditepati');
+//     } else {
+//         reject('Ingkar Janji ...');
+//     }
+// });
+
+// janji1
+//     .then(response => console.log('OK! : ' + response))
+//     .catch(response => console.log('NOT OK! : ' + response));
+
+// Contoh 2
