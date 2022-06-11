@@ -115,26 +115,60 @@
 //     .catch(response => console.log('NOT OK! : ' + response));
 
 // Contoh 2
-let ditepati = true;
-const janji2 = new Promise((resolve, reject) => {
-    if (ditepati) {
-        setTimeout(() => {
-            resolve('Ditepati setelah beberapa waktu!')
-        }, 2000);
-    } else {
-        setTimeout(() => {
-            resolve('Tidak ditepati setelah beberapa waktu!')
-        }, 2000);
-    }
-});
+// let ditepati = true;
+// const janji2 = new Promise((resolve, reject) => {
+//     if (ditepati) {
+//         setTimeout(() => {
+//             resolve('Ditepati setelah beberapa waktu!')
+//         }, 2000);
+//     } else {
+//         setTimeout(() => {
+//             resolve('Tidak ditepati setelah beberapa waktu!')
+//         }, 2000);
+//     }
+// });
 
-console.log('mulai');
-janji2
-    .finally(() => console.log('selesai menunggu'))
-    .then(response => console.log('OK! : ' + response))
-    .catch(response => console.log('NOT OK! : ' + response));
+// console.log('mulai');
+// janji2
+//     .finally(() => console.log('selesai menunggu'))
+//     .then(response => console.log('OK! : ' + response))
+//     .catch(response => console.log('NOT OK! : ' + response));
 // console.log(janji2
 //     .then(() => {
 //         console.log(janji2);
 //     }));
-console.log('selesai');
+// console.log('selesai');
+
+// Contoh 3
+
+const film = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve([{
+            judul: 'Adikmu Adalah Istriku',
+            sutradara: 'Manoj Pundjabi',
+            pemeran: 'Reza Sahadian, Cinta Lautan'
+        }]);
+    }, 1000);
+});
+
+const cuaca = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve([{
+            kota: 'Tangerang Selatan',
+            temp: 21,
+            kondisi: 'Gerimis Kecil '
+        }]);
+    }, 2000);
+});
+
+// film.then(response => console.log(response));
+// cuaca.then(response => console.log(response));
+
+// menggunakan promise.all
+Promise.all([film, cuaca])
+    // .then(response => console.log(response));
+    .then(response => {
+        const [film, cuaca] = response;
+        console.log(film);
+        console.log(cuaca);
+    })
