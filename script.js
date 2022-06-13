@@ -74,8 +74,8 @@ searchButton.addEventListener('click', async function () {
         const movies = await getMovies(inputKeyword.value);
         // console.log(movies);
         updateUI(movies);
-    } catch (err) {
-        alert(err);
+    } catch (log) {
+        alert(log);
     }
 });
 
